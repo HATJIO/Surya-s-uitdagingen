@@ -128,4 +128,9 @@ namespace Surya_s_uitdagingen
             return copy;
         }
     }
+
+    class Win1 : Forms
+    {
+
+    }
 }
