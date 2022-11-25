@@ -108,6 +108,7 @@ namespace Surya_s_uitdagingen
         //globals
         TextBox text_x, text_y, text_s;
         ComboBox kleur, vorm;
+        Panel panel;
 
 
         float gx, gy, gs;
@@ -125,7 +126,7 @@ namespace Surya_s_uitdagingen
             this.BackColor = Color.LightGray;
 
             // panel
-            Panel panel = new Panel();
+            panel = new Panel();
             panel.Location = new Point(300, 50);
             panel.Size = new Size(500, 500);
             panel.BackColor = Color.White;
@@ -264,8 +265,7 @@ namespace Surya_s_uitdagingen
             gy = e.Y;
             text_x.Text = gx.ToString();
             text_y.Text = gy.ToString();
-            var p = sender as Panel;
-            p.Invalidate(); // refresht wat er gebeurt met een klik in panel
+            panel.Invalidate(); // refresht wat er gebeurt met een klik in panel
         }
         public void button(object sender, EventArgs e)
         {
@@ -273,6 +273,7 @@ namespace Surya_s_uitdagingen
             gy = float.Parse(text_y.Text);
             gs = float.Parse(text_s.Text);
             this.Invalidate();
+            panel.Invalidate();
             // error: wanneer tekst in textbox wordt gezet, box wordt niet in panel verplaatst
         }
     }
